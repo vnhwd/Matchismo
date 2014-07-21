@@ -39,6 +39,7 @@
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="cardButton" destination="fHS-lc-8JU" id="1jr-Hm-bbp"/>
                         <outlet property="flipLable" destination="2fM-s1-tgJ" id="ds3-5b-X7F"/>
                     </connections>
                 </viewController>
