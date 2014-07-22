@@ -13,13 +13,26 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipLable;
 @property (nonatomic) int flipCount;
 @property (weak, nonatomic) IBOutlet UIButton *cardButton;
+@property (strong,nonatomic) Deck *myDeck;
 
 @end
 
 @implementation CardGameViewController
+
+- (Deck *)myDeck
+{
+    if(!_myDeck) _myDeck = [self createDeck];
+    return _myDeck;
+}
+
+-(Deck *)createDeck
+{
+    return [[PlayingCardDeck alloc]init];
+}
+
 -(void)viewDidLoad
 {
-    [self setCardContent:self.cardButton];
+    
 }
 -(void)setFlipCount:(int)flipCount
 {
@@ -28,43 +41,38 @@
     NSLog(@"flipCount change to %d",self.flipCount);
 }
 
--(NSString *)setRandomCard
-{
-    PlayingCardDeck *myDeck = [[PlayingCardDeck alloc]init];
-    Card * randomCard = [myDeck drawRandomCard];
-    return randomCard.contents;
-}
-
 - (IBAction)playCard:(UIButton *)sender
 {
     if ([sender.currentTitle length]) {
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"]
                           forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
+        
+        self.flipCount++;
+        
     }
     else {
-        [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
-                          forState:UIControlStateNormal];
-        [self setCardContent:sender];
+        Card *randomCard = [self.myDeck drawRandomCard];
+        if (randomCard) {
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
+                              forState:UIControlStateNormal];
+            NSString *cardContent = randomCard.contents;
+            [sender setTitle:cardContent forState:UIControlStateNormal];
+            NSRange redP = [cardContent rangeOfString:@"♥️"];
+            NSRange redD = [cardContent rangeOfString:@"♦️"];
+            if (redD.location != NSNotFound || redP.location != NSNotFound) {
+                [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            }
+            else
+            {
+                [sender  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            }
+            self.flipCount++;
+
+        }
     }
-    
-    self.flipCount++;
-    
+ 
 }
 
-- (void) setCardContent:(UIButton *)sender
-{
-    NSString *cardContent = [self setRandomCard];
-    [sender setTitle:cardContent forState:UIControlStateNormal];
-    NSRange redP = [cardContent rangeOfString:@"♥︎"];
-    NSRange redD = [cardContent rangeOfString:@"♦︎"];
-    if (redD.location != NSNotFound || redP.location != NSNotFound) {
-        [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    }
-    else
-    {
-        [sender  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    }
-}
 
 @end

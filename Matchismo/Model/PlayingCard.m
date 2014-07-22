@@ -12,7 +12,7 @@
 
 + (NSArray *)vaildSuits
 {
-    return @[@"♠︎",@"♣︎",@"♥︎",@"♦︎"];
+    return @[@"♠️",@"♣️",@"♥️",@"♦️"];
 }
 
 + (NSArray *)vaildRanks
