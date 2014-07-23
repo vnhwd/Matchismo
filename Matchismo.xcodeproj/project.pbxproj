@@ -25,6 +25,7 @@
 		3BE47964197CF23300AA4B20 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE47963197CF23300AA4B20 /* PlayingCard.m */; };
 		3BE47967197D011A00AA4B20 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE47966197D011A00AA4B20 /* Deck.m */; };
 		3BE4796A197D07B400AA4B20 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BE47969197D07B400AA4B20 /* PlayingCardDeck.m */; };
+		3BEAE00A197E5D8800FA4559 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEAE009197E5D8800FA4559 /* CardMatchingGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		3BE47966197D011A00AA4B20 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Deck.m; path = Model/Deck.m; sourceTree = "<group>"; };
 		3BE47968197D07B400AA4B20 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		3BE47969197D07B400AA4B20 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		3BEAE008197E5D8800FA4559 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		3BEAE009197E5D8800FA4559 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +171,8 @@
 		3BE47961197CC04D00AA4B20 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BEAE008197E5D8800FA4559 /* CardMatchingGame.h */,
+				3BEAE009197E5D8800FA4559 /* CardMatchingGame.m */,
 				3BE4795E197CC04000AA4B20 /* Card.h */,
 				3BE4795F197CC04000AA4B20 /* Card.m */,
 				3BE47962197CF23300AA4B20 /* PlayingCard.h */,
@@ -282,6 +287,7 @@
 				3BE479401979171F00AA4B20 /* CardGameViewController.m in Sources */,
 				3BE479361979171F00AA4B20 /* main.m in Sources */,
 				3BE47964197CF23300AA4B20 /* PlayingCard.m in Sources */,
+				3BEAE00A197E5D8800FA4559 /* CardMatchingGame.m in Sources */,
 				3BE4796A197D07B400AA4B20 /* PlayingCardDeck.m in Sources */,
 				3BE47967197D011A00AA4B20 /* Deck.m in Sources */,
 				3BE47960197CC04000AA4B20 /* Card.m in Sources */,

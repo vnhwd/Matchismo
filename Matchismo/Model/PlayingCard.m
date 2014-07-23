@@ -54,6 +54,31 @@
     return [rankString[self.rank] stringByAppendingString:self.suit];
 }
 
+- (int)match:(NSArray *)otherCards
+{
+    int score = 0;
+    PlayingCard *matchableCard1 = otherCards[0];
+    PlayingCard *matchableCard2 = otherCards[1];
+    if (matchableCard1.rank == matchableCard2.rank && self.rank == matchableCard1.rank ) {
+        score += 16;
+    } else if (matchableCard1.rank == matchableCard2.rank || matchableCard1.rank == self.rank ||
+               matchableCard2.rank == self.rank) {
+        score += 4;
+    }
+    
+    if ([matchableCard1.suit isEqualToString:matchableCard2.suit] &&
+        [matchableCard1.suit isEqualToString:self.suit]) {
+        score += 4;
+    } else if ([matchableCard1.suit isEqualToString:matchableCard2.suit] ||
+               [matchableCard1.suit isEqualToString:self.suit] ||
+               [matchableCard2.suit isEqualToString:self.suit]) {
+        score += 1;
+    }
+    
+    return score;
+    
+}
+
 
 
 
